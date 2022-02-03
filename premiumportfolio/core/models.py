@@ -11,6 +11,10 @@ class ProjectCategory(models.Model):
         """string representation"""
         return self.title
 
+    def getId(self):
+        """Convert name to lowercase id for HTML ID use"""
+        return self.title.lower()
+
 
 class Tech(models.Model):
     """DB table that holds the techs used in projects"""
