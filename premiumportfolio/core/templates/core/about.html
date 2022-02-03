@@ -1,5 +1,52 @@
 {% extends 'core.html' %}
+{% load static %}
 
 {% block content %}
-    <h1>About</h1>
+<section class="section pb-5">
+    <div class="container">
+      <div class="row mb-5 align-items-end">
+        <div class="col-md-6" data-aos="fade-up">
+
+          <h2>About Me</h2>
+          <p class="mb-0">Without requirements or design, programming is the art of adding bugs to an empty text file.</p>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 ml-auto order-2" data-aos="fade-up">
+          <h3 class="h3 mb-4">Skills</h3>
+          <ul class="list-unstyled">
+              {% for skill in skills %}
+            <li class="mb-3">
+              <div class="d-flex mb-1">
+                <strong>{{ skill.title }}&nbsp</strong>
+                <span class="ml-auto">{{ skill.percentage }}%</span>
+              </div>
+              <div class="progress custom-progress">
+                <div class="progress-bar" role="progressbar" style="width: {{ skill.percentage }}%" aria-valuenow="{{ skill.percentage }}" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div class="col-md-7 mb-5 mb-md-0" data-aos="fade-up">
+          <p><img src="{% static 'assets/img/aboutPhoto.jpeg' %}" alt="Image" class="img-fluid"></p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor dignissimos delectus minima reprehenderit
+            molestias illo dolorem et, odio!</p>
+          <p>Fuga fugit distinctio delectus iure vitae consequatur excepturi, mollitia, consectetur molestias sapiente
+            rem consequuntur, illum adipisci, sed obcaecati!</p>
+          <p>Ex, dolorem qui voluptas reprehenderit provident, ad ipsum iure a consequatur voluptatem incidunt nobis.
+            Vitae reiciendis quae ex.</p>
+          <p>Optio consectetur culpa nemo, fugit pariatur veniam voluptate laudantium rerum fuga dolor in maiores ea
+            nisi voluptatibus. Minus?</p>
+          <p><a href="{{ resume.resume.url }}" class="readmore" download>Download my CV</a></p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
 {% endblock %}
