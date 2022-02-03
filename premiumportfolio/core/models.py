@@ -30,6 +30,7 @@ class Project(models.Model):
     techs = models.ManyToManyField(Tech)
     codeLink = models.CharField(max_length=255)
     viewLink = models.CharField(max_length=255)
+    # image = models.ImageField(upload_to='uploads/')
 
     def __str__(self):
         """string representation"""

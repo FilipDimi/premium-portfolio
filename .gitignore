@@ -98,3 +98,6 @@ ENV/
 
 # Local Settings
 *local_settings*
+
+# Static & media
+*static*
