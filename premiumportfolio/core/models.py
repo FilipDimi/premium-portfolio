@@ -5,7 +5,7 @@ from django.db import models
 class ProjectCategory(models.Model):
     """DB table for the Project Category"""
     title = models.CharField(max_length=30)
-    image = models.ImageField(upload_to='')
+    # image = models.ImageField(upload_to='uploads/')
 
     def __str__(self):
         """string representation"""
@@ -50,7 +50,7 @@ class Skill(models.Model):
 class Resume(models.Model):
     """DB table to hold the resume .pdf file"""
     developer = models.CharField(max_length=50)
-    resume = models.FileField(upload_to='')
+    resume = models.FileField(upload_to='uploads/')
 
     def __str__(self):
         """string representation"""
