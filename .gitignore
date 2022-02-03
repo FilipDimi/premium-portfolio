@@ -95,3 +95,6 @@ ENV/
 
 *.sqlite3
 .vagrant
+
+# Local Settings
+*local_settings*
