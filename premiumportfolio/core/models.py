@@ -87,7 +87,7 @@ class Contact(models.Model):
     """DB table to hold the developer's contact info"""
     summary = models.TextField()
     address = models.CharField(max_length=50)
-    phone = models.CharField(max_length=15)
+    phone = models.CharField(max_length=30)
     email = models.EmailField()
 
     def __str__(self):
