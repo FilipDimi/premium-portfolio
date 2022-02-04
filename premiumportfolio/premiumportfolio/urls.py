@@ -13,7 +13,8 @@ urlpatterns = [
     path('services/', views.services, name='services'),
     path('works/', views.works, name='works'),
     path('contact/', views.contact, name='contact'),
-    path('project/<int:pk>/', views.detail_project, name='detail_project')
+    path('project/<int:pk>/', views.detail_project, name='detail_project'),
+    path('send_email', views.send_email, name='send_email'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

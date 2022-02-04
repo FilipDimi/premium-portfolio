@@ -15,7 +15,7 @@
       <div class="row">
         <div class="col-md-6 mb-5 mb-md-0" data-aos="fade-up">
 
-          <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+          <form action="{% url 'send_email' %}" method="post" role="form"> {% csrf_token %}
 
             <div class="row gy-3">
               <div class="col-md-6 form-group">
@@ -36,9 +36,8 @@
               </div>
 
               <div class="col-md-12 my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+                {% if message.id == 1 %}<div class="error-message"><span style="color: #cc0000">{{ message.msg }}</span></div> {% endif %}
+                {% if message.id == 0 %}<div class="sent-message"><span style="color: #4BB543">{{ message.msg }}</span></div> {% endif %}
               </div>
 
               <div class="col-md-6 mt-0 form-group">

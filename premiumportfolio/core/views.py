@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.core.mail import send_mail
 from core import models
 
 # Core pages views
@@ -74,3 +75,28 @@ def detail_project(request, pk):
         'techs': techs
     }
     return render(request, 'core/project.html', passing_dict)
+
+
+# Services Views
+def send_email(request):
+    """Send email to the developer - POST request"""
+    developerEmail = models.Contact.objects.all()[0]
+    message = ""
+
+    if request.method == 'POST':
+        name = request.POST.get("name", "")
+        email = request.POST.get("email", "")
+        subject = request.POST.get("subject", "")
+        message = request.POST.get("message", "")
+
+        if name and email and subject and message:
+            send_mail(subject, message, 'f_dimitrievski@outlook.com', [developerEmail])
+            message = {"id": 0, "msg": "Your message has been sent. Thank you!"}
+        else:
+            message = {"id": 1, "msg": "All fields are required"}
+
+    passing_dict = {
+        'message': message
+    }
+    return render(request, 'core/contact.html', passing_dict)
+
