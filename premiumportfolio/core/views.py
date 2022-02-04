@@ -33,7 +33,7 @@ def about(request):
 def services(request):
     """Send GET request for the services page"""
     s_services = models.Service.objects.all()
-    serviceCategories = models.ServiceCategory
+    serviceCategories = models.ServiceCategory.objects.all()
 
     passing_dict = {
         's_service': s_services,
