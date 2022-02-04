@@ -1,4 +1,4 @@
-A personal portfolio buils with:
+A personal portfolio built with:
   * Python 3
   * Django
   * PostgreSQL
