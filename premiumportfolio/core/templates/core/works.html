@@ -1,5 +1,37 @@
 {% extends 'core.html' %}
+{% load static %}
 
 {% block content %}
-    <h1>Works</h1>
+    <!-- ======= Works Section ======= -->
+    <section class="section site-portfolio">
+        <div class="container">
+          <div class="row mb-5 align-items-center">
+            <div class="col-md-12 col-lg-6 mb-4 mb-lg-0" data-aos="fade-up">
+                <h2>Hey, I'm Filip Dimitrievski</h2>
+                <p class="mb-0">Full Stack Developer &amp; Fanuc Programmer</p>
+              </div>
+            <div class="col-md-12 col-lg-6 text-start text-lg-end" data-aos="fade-up" data-aos-delay="100">
+              <div id="filters" class="filters">
+                <a href="#" data-filter="*" class="active">All</a>
+                {% for projectCategory in projectCategories %}
+                <a href="#" data-filter=".{{ projectCategory.getId }}">{{ projectCategory.title }}</a>
+                {% endfor %}
+            </div>
+            </div>
+          </div>
+          <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
+            {% for project in projects %}
+            <div class="item {{ project.projectCategory.getId }} col-sm-6 col-md-4 col-lg-4 mb-4">
+              <a href="work-single.html" class="item-wrap fancybox">
+                <div class="work-info">
+                  <h3>{{ project.title }}</h3>
+                  <span>{{ project.projectCategory.title }}</span>
+                </div>
+                <img class="img-fluid" src="{% static 'assets/img/img_1.jpg' %}">
+              </a>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </section><!-- End  Works Section -->
 {% endblock %}

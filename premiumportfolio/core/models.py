@@ -13,7 +13,7 @@ class ProjectCategory(models.Model):
 
     def getId(self):
         """Convert name to lowercase id for HTML ID use"""
-        return self.title.lower()
+        return self.title.lower().strip()
 
 
 class Tech(models.Model):
