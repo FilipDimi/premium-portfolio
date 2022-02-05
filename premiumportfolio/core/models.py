@@ -41,6 +41,14 @@ class Project(models.Model):
         return f'{self.title} - {self.projectCategory.title}'
 
 
+class FeaturedProject(models.Model):
+    """One to One relationship to Project to display featured projects on home page"""
+    project = models.OneToOneField(Project, on_delete=models.CASCADE)
+
+    def __str__(self):
+        """String representation"""
+
+
 # About & Services DB Tables
 class Skill(models.Model):
     """DB table for the developer's skills"""
