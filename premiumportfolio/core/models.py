@@ -47,6 +47,7 @@ class FeaturedProject(models.Model):
 
     def __str__(self):
         """String representation"""
+        return f'{self.project.title} - {self.project.projectCategory.title}'
 
 
 # About & Services DB Tables
@@ -72,7 +73,7 @@ class Resume(models.Model):
 
 class Service(models.Model):
     """DB table to hold developer's services"""
-    title = models.CharField(max_length=30)
+    title = models.CharField(max_length=40)
 
     def __str__(self):
         """string representation"""

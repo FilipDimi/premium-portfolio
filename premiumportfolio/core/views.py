@@ -6,7 +6,7 @@ from core import models
 def home(request):
     """Send GET request for the index page"""
     projectCategories = models.ProjectCategory.objects.all()
-    projects = models.Project.objects.all()
+    projects = models.FeaturedProject.objects.all()
     serviceCategories = models.ServiceCategory.objects.all()
     s_services = models.Service.objects.all()
 
