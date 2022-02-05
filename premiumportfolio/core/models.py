@@ -80,6 +80,16 @@ class Service(models.Model):
         return self.title
 
 
+class TechLogo(models.Model):
+    """DB table that holds logo for a tech"""
+    title = models.CharField(max_length=30)
+    # image= models.ImageField(upload_to='/')
+
+    def __str__(self):
+        """string representation"""
+        return self.title
+
+
 class ServiceCategory(models.Model):
     """DB table for the Service Category"""
     title = models.CharField(max_length=30)

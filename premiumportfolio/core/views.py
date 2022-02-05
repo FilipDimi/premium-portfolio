@@ -9,12 +9,14 @@ def home(request):
     projects = models.FeaturedProject.objects.all()
     serviceCategories = models.ServiceCategory.objects.all()
     s_services = models.Service.objects.all()
+    techLogos = models.TechLogo.objects.all()
 
     passing_dict = {
         'projectCategories': projectCategories,
         'projects': projects,
         'serviceCategories': serviceCategories,
-        's_services': s_services
+        's_services': s_services,
+        'techLogos': techLogos
     }
     return render(request, 'core/index.html', passing_dict)
 
