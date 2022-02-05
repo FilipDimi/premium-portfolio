@@ -21,13 +21,13 @@
         </div>
         <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
           {% for project in projects %}
-          <div class="item {{ project.projectCategory.getId }} col-sm-6 col-md-4 col-lg-4 mb-4">
+          <div class="item {{ project.project.projectCategory.getId }} col-sm-6 col-md-4 col-lg-4 mb-4">
             <a href="{% url 'detail_project' project.project.pk %}" class="item-wrap fancybox">
               <div class="work-info">
                 <h3>{{ project.project.title }}</h3>
                 <span>{{ project.projectCategory.title }}</span>
               </div>
-              <img class="img-fluid" src="{% static 'assets/img/img_1.jpg' %}">
+              <img class="img-fluid" src="{{ project.project.img.url }}">
             </a>
           </div>
           {% endfor %}
@@ -46,7 +46,7 @@
             <div class="row">
               {% for tech in techLogos %}
               <div class="col-4 col-sm-4 col-md-2">
-                <a href="#" class="client-logo"><img src="{% static 'assets/img/logo-adobe.png' %}" alt="Image" class="img-fluid"></a>
+                <a href="#" class="client-logo"><img src="{{ tech.image.url }}" alt="Image" class="img-fluid"></a>
               </div>
               {% endfor %}
             </div>

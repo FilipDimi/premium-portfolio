@@ -25,10 +25,12 @@ def about(request):
     """Send GET request for the about page"""
     skills = models.Skill.objects.all()
     resume = models.Resume.objects.all()
+    developer = models.Contact.objects.all()
 
     passing_dict = {
         'skills': skills,
-        'resume': resume
+        'resume': resume,
+        'developer': developer[0]
     }
     return render(request, 'core/about.html', passing_dict)
 
@@ -59,10 +61,10 @@ def works(request):
 
 def contact(request):
     """Send GET request for the contact page"""
-    contact = models.Contact.objects.all()
+    developer = models.Contact.objects.all()
 
     passing_dict = {
-        'contact': contact
+        'developer': developer[0]
     }
     return render(request, 'core/contact.html', passing_dict)
 

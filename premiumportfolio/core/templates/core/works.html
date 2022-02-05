@@ -27,7 +27,7 @@
                   <h3>{{ project.title }}</h3>
                   <span>{{ project.projectCategory.title }}</span>
                 </div>
-                <img class="img-fluid" src="{% static 'assets/img/img_1.jpg' %}">
+                <img class="img-fluid" src="{{ project.image.url }}">
               </a>
             </div>
             {% endfor %}

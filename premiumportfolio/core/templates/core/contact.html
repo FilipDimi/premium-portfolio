@@ -7,7 +7,7 @@
       <div class="row mb-5 align-items-end">
         <div class="col-md-6" data-aos="fade-up">
           <h2>Contact</h2>
-          <p class="mb-0">If you have any questions, please feel free to drop me a line. If you don't get an answer immediately, I might just be traveling through the middle of coding. I'll get back to you as soon as I can. That's a promise!</p>
+          <p class="mb-0">{{ developer.summary }}</p>
         </div>
 
       </div>
@@ -53,15 +53,15 @@
           <ul class="list-unstyled">
             <li class="mb-3">
               <strong class="d-block mb-1">Location</strong>
-              <span>Macomb, MI</span>
+              <span>{{ developer.address }}</span>
             </li>
             <li class="mb-3">
               <strong class="d-block mb-1">Phone</strong>
-              <span>+1 (586) 646-6402</span>
+              <span>{{ developer.phone }}</span>
             </li>
             <li class="mb-3">
               <strong class="d-block mb-1">Email</strong>
-              <span>filipdimitrievski@protonmail.com</span>
+              <span>{{ developer.email }}</span>
             </li>
           </ul>
         </div>

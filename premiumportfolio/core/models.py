@@ -1,3 +1,4 @@
+from distutils.command.upload import upload
 from django.db import models
 
 
@@ -5,7 +6,7 @@ from django.db import models
 class ProjectCategory(models.Model):
     """DB table for the Project Category"""
     title = models.CharField(max_length=30)
-    # image = models.ImageField(upload_to='uploads/')
+    image = models.ImageField(upload_to='uploads/')
 
     def __str__(self):
         """string representation"""
@@ -34,7 +35,7 @@ class Project(models.Model):
     techs = models.ManyToManyField(Tech)
     codeLink = models.CharField(max_length=255)
     viewLink = models.CharField(max_length=255)
-    # image = models.ImageField(upload_to='uploads/')
+    image = models.ImageField(upload_to='uploads/')
 
     def __str__(self):
         """string representation"""
@@ -83,7 +84,7 @@ class Service(models.Model):
 class TechLogo(models.Model):
     """DB table that holds logo for a tech"""
     title = models.CharField(max_length=30)
-    # image= models.ImageField(upload_to='/')
+    image= models.ImageField(upload_to='/')
 
     def __str__(self):
         """string representation"""
@@ -108,6 +109,7 @@ class Contact(models.Model):
     address = models.CharField(max_length=50)
     phone = models.CharField(max_length=30)
     email = models.EmailField()
+    image = models.ImageField(upload_to='/')
 
     def __str__(self):
         """string representation"""
